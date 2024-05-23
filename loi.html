@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #202124;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            background-color: #ffffff;
+            padding: 5px 10px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+            transition: box-shadow 0.2s ease-in-out;
+        }
+        .search-bar:focus-within {
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.5);
+        }
+        .search-bar input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+        .search-bar .mic {
+            padding: 0 10px;
+        }
+        .search-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .search-buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #f8f9fa;
+            border: 1px solid #dfe1e5;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .search-buttons button:hover {
+            background-color: #f1f3f4;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #70757a;
+        }
+        .footer a {
+            margin: 0 10px;
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .search-bar {
+                width: 90%;
+            }
+            .search-buttons {
+                flex-direction: column;
+            }
+            .search-buttons button {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo">
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search here" id="search-input">
+        <button class="search" onclick="search()">
+            <img src="https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Search" style="height: 24px;">
+        </button>
+        <button class="mic">
+            <img src="https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Voice Search" style="height: 24px;">
+        </button>
+    </div>
+    <div class="search-buttons">
+       <button onclick="search()">Search</button>                 
+       <button onclick="feelingLucky()">I'm Feeling Lucky</button>
+    </div>
+    <div class="footer">
+        <a href="ads.html">Advertising</a>
+        <a href="#">Business</a>
+        <a href="about.html">About</a>
+        <a href="#">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+
+    <script>
+        function search() {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                window.location.href = `gol.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+
+        function feelingLucky() {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                window.location.href = `lucky.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+
+        document.getElementById('search-input').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                search();
+            }
+        });
+    </script>
+</body>
+</html>

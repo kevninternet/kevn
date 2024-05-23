@@ -1,0 +1,68 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-image: url('file:///C:/Users/eshwa/OneDrive/Pictures/coolwalk.jpg');
+
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+ .nav {
+      list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+         background:#369;  
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav li a {
+            display: block;
+            color: white;
+	
+	font-family:'Roboto', sans-serif;
+            
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav li a:hover {
+            background:#fff;
+        }
+

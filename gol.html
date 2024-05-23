@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 40px;
+        }
+        .search-box {
+            margin-left: 20px;
+            flex-grow: 1;
+            display: flex;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+            box-shadow: none;
+        }
+        .search-results {
+            margin: 20px;
+        }
+        .result {
+            margin-bottom: 20px;
+        }
+        .result a {
+            text-decoration: none;
+            color: #1a0dab;
+            font-size: 18px;
+        }
+        .result a:hover {
+            text-decoration: underline;
+        }
+        .result .url {
+            font-size: 14px;
+            color: #006621;
+        }
+        .result .snippet {
+            font-size: 14px;
+            color: #545454;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #1a0dab;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        #codeDisplay {
+            padding: 2%;
+            font-family: roboto;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search Google or type a URL">
+        </div>
+    </div>
+
+    <pre id="codeDisplay"></pre>
+    <hr>
+    
+    <div class="search-results">
+        <div class="result">
+            <a href="https://www.flipkart.com/">Flipkart</a>
+            <div class="url">https://flipkart.com</div>
+            <div class="snippet">This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</div>
+        </div>
+        <div class="result">
+            <a href="https://example2.com">Example2 Domain</a>
+            <div class="url">https://example2.com</div>
+            <div class="snippet">Example2 domain is another placeholder for use in documentation and examples. It is free to use without prior coordination.</div>
+        </div>
+        <!-- Add more results as needed -->
+    </div>
+
+    <div class="footer">
+        <a href="help.html">Help</a>
+        <a href="#">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split("&").forEach(param => {
+                const [key, value] = param.split("=");
+                params[decodeURIComponent(key)] = decodeURIComponent(value);
+            });
+            return params;
+        }
+
+        const queryParams = getQueryParams();
+
+        if (queryParams.q) {
+            document.getElementById("search-input").value = queryParams.q;
+        }
+
+        var code = localStorage.getItem("code");
+        if (code) {
+            document.getElementById("codeDisplay").textContent = code;
+        }
+    </script>
+</body>
+</html>

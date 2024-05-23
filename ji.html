@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type the question</title>
+</head> <style>
+        .nav {
+      list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+         background:#369;  
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .nav li a {
+            display: block;
+            color: white;
+	
+	font-family:'Roboto', sans-serif;
+            
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav li a:hover {
+            background:#865;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="nav">
+    <li><a href="ji3.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+</body>  
+
+
+
+ <style>
+ 
+    body {
+          height:10%;
+        background-image: url("file:///C:/Users/eshwa/OneDrive/Pictures/coolwalk.jpg");
+    }
+  </style>
+</body>
+<h2 class="h2">WRITE THE ANSWER</h2>
+<style>
+.h2:hover{
+font-family:cursive;
+display:block;
+text-align:center;
+border-radius:50%;
+background:pink;
+color:white;
+}
+</style>
+<h3 class="h3">Please visit the terms option after clicking the move to search button<br>Thank you</h3>
+<style>
+.h3{
+font-family:cursive;
+display:block;
+text-align:center;
+border-radius:50%;
+color:white;
+}
+</style>
+
+<body>
+    <textarea id="codeInput" rows="10" cols="50"></textarea>
+    <br>
+<style>
+textarea{
+font-family:cursive;
+}
+</style>
+    <button onclick="redirectToDisplayPage()">move to search</button>
+
+    <script>
+        function redirectToDisplayPage() {
+            var code = document.getElementById("codeInput").value;
+            localStorage.setItem("code", code);
+            window.location.href = "loi.html";
+        }
+    </script>
+</body>
+</html>
